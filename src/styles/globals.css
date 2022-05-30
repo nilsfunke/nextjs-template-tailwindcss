@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Global CSS-Variables
+*/
+:root {
+  /* Overlay */
+  --colors-overlay-black-1: hsla(0, 0%, 0%, 0.012);
+  --colors-overlay-black-2: hsla(0, 0%, 0%, 0.027);
+  --colors-overlay-black-3: hsla(0, 0%, 0%, 0.047);
+  --colors-overlay-black-4: hsla(0, 0%, 0%, 0.071);
+  --colors-overlay-black-5: hsla(0, 0%, 0%, 0.09);
+  --colors-overlay-black-6: hsla(0, 0%, 0%, 0.114);
+  --colors-overlay-black-7: hsla(0, 0%, 0%, 0.141);
+  --colors-overlay-black-8: hsla(0, 0%, 0%, 0.22);
+  --colors-overlay-black-9: hsla(0, 0%, 0%, 0.439);
+  --colors-overlay-black-10: hsla(0, 0%, 0%, 0.478);
+  --colors-overlay-black-11: hsla(0, 0%, 0%, 0.565);
+  --colors-overlay-black-12: hsla(0, 0%, 0%, 0.91);
+  --colors-overlay-white-1: hsla(0, 0%, 100%, 0);
+  --colors-overlay-white-2: hsla(0, 0%, 100%, 0.013);
+  --colors-overlay-white-3: hsla(0, 0%, 100%, 0.034);
+  --colors-overlay-white-4: hsla(0, 0%, 100%, 0.056);
+  --colors-overlay-white-5: hsla(0, 0%, 100%, 0.086);
+  --colors-overlay-white-6: hsla(0, 0%, 100%, 0.124);
+  --colors-overlay-white-7: hsla(0, 0%, 100%, 0.176);
+  --colors-overlay-white-8: hsla(0, 0%, 100%, 0.249);
+  --colors-overlay-white-9: hsla(0, 0%, 100%, 0.386);
+  --colors-overlay-white-10: hsla(0, 0%, 100%, 0.446);
+  --colors-overlay-white-11: hsla(0, 0%, 100%, 0.592);
+  --colors-overlay-white-12: hsla(0, 0%, 100%, 0.923);
+
+  /* Neutral Gray */
+  /* 1-2 => Backgrounds */
+  /* 3-5 => Component Backgrounds */
+  /* 6-8 => Borders */
+  /* 9-10 => Solid Backgrounds */
+  /* 11-12 => Text */
+  --colors-gray-1: hsl(206, 30%, 98.8%);
+  --colors-gray-2: hsl(210, 16.7%, 97.6%);
+  --colors-gray-3: hsl(209, 13.3%, 95.3%);
+  --colors-gray-4: hsl(209, 12.2%, 93.2%);
+  --colors-gray-5: hsl(208, 11.7%, 91.1%);
+  --colors-gray-6: hsl(208, 11.3%, 88.9%);
+  --colors-gray-7: hsl(207, 11.1%, 85.9%);
+  --colors-gray-8: hsl(205, 10.7%, 78%);
+  --colors-gray-9: hsl(206, 6%, 56.1%);
+  --colors-gray-10: hsl(206, 5.8%, 52.3%);
+  --colors-gray-11: hsl(206, 6%, 43.5%);
+  --colors-gray-12: hsl(206, 24%, 9%);
+
+  /* Brand */
+  --colors-brand-1: hsl(206, 100%, 99.2%);
+  --colors-brand-2: hsl(210, 100%, 98%);
+  --colors-brand-3: hsl(209, 100%, 96.5%);
+  --colors-brand-4: hsl(210, 98.8%, 94%);
+  --colors-brand-5: hsl(209, 95%, 90.1%);
+  --colors-brand-6: hsl(209, 81.2%, 84.5%);
+  --colors-brand-7: hsl(208, 77.5%, 76.9%);
+  --colors-brand-8: hsl(206, 81.9%, 65.3%);
+  --colors-brand-9: hsl(206, 100%, 50%);
+  --colors-brand-10: hsl(208, 100%, 47.3%);
+  --colors-brand-11: hsl(211, 100%, 43.2%);
+  --colors-brand-12: hsl(211, 100%, 15%);
+}
+
+/*
+  Components
+*/
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply m-0 flex cursor-pointer select-none items-center justify-center gap-8 whitespace-nowrap rounded-8 border-0 p-0 font-primary font-semibold outline-0 transition;
+  }
+  .btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .btn.btn-text {
+    @apply px-16;
+  }
+
+  .btn.btn-icon {
+    @apply aspect-square p-0;
+  }
+
+  .btn.btn-lg {
+    @apply h-56 text-18;
+  }
+  .btn.btn-text.btn-lg svg {
+    @apply h-28 w-28;
+  }
+  .btn.btn-icon.btn-lg svg {
+    @apply h-32 w-32;
+  }
+
+  .btn.btn-md {
+    @apply h-48 text-16;
+  }
+  .btn.btn-text.btn-md svg {
+    @apply h-24 w-24;
+  }
+  .btn.btn-icon.btn-md svg {
+    @apply h-28 w-28;
+  }
+
+  .btn.btn-sm {
+    @apply h-40 text-14;
+  }
+  .btn.btn-text.btn-sm svg {
+    @apply h-20 w-20;
+  }
+  .btn.btn-icon.btn-sm svg {
+    @apply h-24 w-24;
+  }
+
+  .btn.btn-xs {
+    @apply h-32 text-12;
+  }
+  .btn.btn-text.btn-xs svg {
+    @apply h-16 w-16;
+  }
+  .btn.btn-icon.btn-xs svg {
+    @apply h-20 w-20;
+  }
+
+  .btn.btn-primary {
+    @apply bg-brand-9 text-white;
+    @apply hover:bg-brand-10;
+  }
+  .btn.btn-primary svg {
+    @apply fill-white;
+  }
+
+  .btn.btn-secondary {
+    @apply bg-gray-12 text-white;
+    @apply hover:opacity-90;
+  }
+  .btn.btn-secondary svg {
+    @apply fill-white;
+  }
+
+  .btn.btn-tertiary {
+    @apply text-gray-11;
+    @apply hover:bg-gray-5;
+  }
+  .btn.btn-tertiary svg {
+    @apply fill-gray-11;
+  }
+}
+
+/*
+  Global Styles
+*/
+
+.body {
+  @apply bg-gray-1 font-primary text-gray-12;
+}
